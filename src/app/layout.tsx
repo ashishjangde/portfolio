@@ -23,22 +23,22 @@ export const metadata: Metadata = {
     "Backend Engineer India",
     "Fintech Engineer",
   ],
-  authors: [{ name: "Ashish Jangde", url: "https://ashishjangde.com" }],
+  authors: [{ name: "Ashish Jangde", url: "https://ashishjangde.vercel.app" }],
   creator: "Ashish Jangde",
   publisher: "Ashish Jangde",
-  metadataBase: new URL("https://ashishjangde.com"),
+  metadataBase: new URL("https://ashishjangde.vercel.app"),
   alternates: {
-    canonical: "https://ashishjangde.com",
+    canonical: "https://ashishjangde.vercel.app",
   },
   openGraph: {
     title: "Ashish Jangde | Full-Stack & Backend Software Engineer",
     description:
       "I help startups and businesses build production-ready SaaS products, custom web applications, APIs, and real-time systems.",
-    url: "https://ashishjangde.com",
+    url: "https://ashishjangde.vercel.app",
     siteName: "Ashish Jangde Portfolio",
     images: [
       {
-        url: "https://ashishjangde.com/assets/ashish-jangde.png",
+        url: "https://ashishjangde.vercel.app/assets/ashish-jangde.png",
         width: 1200,
         height: 630,
         alt: "Ashish Jangde - Full-Stack & Backend Software Engineer",
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     creator: "@ashishjangde",
     images: [
       {
-        url: "https://ashishjangde.com/assets/ashish-jangde.png",
+        url: "https://ashishjangde.vercel.app/assets/ashish-jangde.png",
         alt: "Ashish Jangde - Full-Stack & Backend Software Engineer",
       },
     ],
@@ -80,14 +80,14 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "Person",
-      "@id": "https://ashishjangde.com/#person",
+      "@id": "https://ashishjangde.vercel.app/#person",
       name: "Ashish Jangde",
       givenName: "Ashish",
       familyName: "Jangde",
       jobTitle: "Full-Stack & Backend Software Engineer",
       description: "Freelance Full-Stack Software Engineer building Next.js, Python, FastAPI & real-time SaaS applications.",
-      url: "https://ashishjangde.com",
-      image: "https://ashishjangde.com/assets/ashish-jangde.png",
+      url: "https://ashishjangde.vercel.app",
+      image: "https://ashishjangde.vercel.app/assets/ashish-jangde.png",
       email: "ashishjangde54@gmail.com",
       address: {
         "@type": "PostalAddress",
@@ -127,10 +127,10 @@ const jsonLd = {
     },
     {
       "@type": "ProfessionalService",
-      "@id": "https://ashishjangde.com/#service",
+      "@id": "https://ashishjangde.vercel.app/#service",
       name: "Ashish Jangde - Software Engineering Services",
-      url: "https://ashishjangde.com",
-      image: "https://ashishjangde.com/assets/ashish-jangde.png",
+      url: "https://ashishjangde.vercel.app",
+      image: "https://ashishjangde.vercel.app/assets/ashish-jangde.png",
       priceRange: "$$",
       address: {
         "@type": "PostalAddress",
