@@ -57,15 +57,15 @@ export function ExperienceTimeline() {
   const reduceMotion = useReducedMotion();
 
   return (
-    <section id="experience" className="border-b border-border py-16 sm:py-20">
-      <BlurFade delay={0.1} className="mb-10 text-left sm:mb-12">
+    <section id="experience" className="border-b border-border py-12 sm:py-20">
+      <BlurFade delay={0.1} className="mb-8 text-left sm:mb-12">
         <p className="mb-2 font-mono text-xs font-semibold text-primary">
           05 / Background &amp; Track Record
         </p>
-        <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+        <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-4xl">
           Work experience
         </h2>
-        <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground">
+        <p className="mt-2 sm:mt-3 max-w-2xl text-xs sm:text-sm leading-relaxed text-muted-foreground">
           Hands-on full-stack product work across backend APIs, data systems,
           real-time integrations, and customer-facing interfaces.
         </p>
@@ -90,11 +90,11 @@ export function ExperienceTimeline() {
               <Card className="relative gap-0 overflow-hidden bg-card/85 py-0 shadow-sm ring-border transition-[box-shadow,ring-color] duration-300 group-hover:shadow-xl group-hover:ring-primary/30">
                 <div className="absolute inset-x-0 top-0 h-px origin-left scale-x-0 bg-primary transition-transform duration-500 group-hover:scale-x-100 motion-reduce:transition-none" />
 
-                <CardHeader className="gap-5 border-b border-border/70 px-5 py-5 sm:grid-cols-[1fr_auto] sm:px-7 sm:py-6">
-                  <div className="flex min-w-0 items-start gap-3.5 sm:gap-4">
+                <CardHeader className="gap-4 sm:gap-5 border-b border-border/70 p-4 sm:px-7 sm:py-6 sm:grid-cols-[1fr_auto]">
+                  <div className="flex min-w-0 items-start gap-3 sm:gap-4">
                     <motion.div
                       whileHover={reduceMotion ? undefined : { rotate: -3, scale: 1.05 }}
-                      className="relative flex size-12 shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-border bg-background p-1.5 shadow-sm sm:size-14"
+                      className="relative flex size-10 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-border bg-background p-1 shadow-sm sm:size-14 sm:rounded-2xl sm:p-1.5"
                     >
                       <Image
                         src="/assets/kalpi.webp"
@@ -106,41 +106,41 @@ export function ExperienceTimeline() {
                     </motion.div>
 
                     <div className="min-w-0">
-                      <div className="mb-2 flex flex-wrap items-center gap-2">
-                        <Badge variant="secondary">Kalpi.ai</Badge>
-                        <Badge variant="outline">{role.type}</Badge>
+                      <div className="mb-1.5 flex flex-wrap items-center gap-1.5 sm:gap-2">
+                        <Badge variant="secondary" className="text-[10px] sm:text-xs">Kalpi.ai</Badge>
+                        <Badge variant="outline" className="text-[10px] sm:text-xs">{role.type}</Badge>
                       </div>
-                      <CardTitle className="text-lg font-semibold tracking-tight sm:text-xl">
+                      <CardTitle className="text-base font-semibold tracking-tight sm:text-xl">
                         {role.role}
                       </CardTitle>
-                      <CardDescription className="mt-1 flex items-center gap-1.5">
+                      <CardDescription className="mt-0.5 sm:mt-1 flex items-center gap-1.5 text-xs">
                         <MapPin aria-hidden="true" className="size-3.5" />
                         {role.location}
                       </CardDescription>
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-2 self-start rounded-full border border-border bg-muted/50 px-3 py-1.5 font-mono text-xs text-muted-foreground sm:justify-self-end">
+                  <div className="flex items-center gap-2 self-start rounded-full border border-border bg-muted/50 px-3 py-1.5 font-mono text-[11px] sm:text-xs text-muted-foreground sm:justify-self-end">
                     <BriefcaseBusiness aria-hidden="true" className="size-3.5 text-primary" />
                     {role.dates}
                   </div>
                 </CardHeader>
 
-                <CardContent className="flex flex-col gap-5 px-5 py-5 sm:px-7 sm:py-6">
-                  <p className="max-w-3xl text-sm leading-relaxed text-muted-foreground">
+                <CardContent className="flex flex-col gap-4 sm:gap-5 p-4 sm:px-7 sm:py-6">
+                  <p className="max-w-3xl text-xs sm:text-sm leading-relaxed text-muted-foreground">
                     {role.summary}
                   </p>
 
-                  <ul className="grid gap-3 md:grid-cols-2" aria-label={`${role.role} responsibilities`}>
+                  <ul className="grid gap-2.5 sm:gap-3 md:grid-cols-2" aria-label={`${role.role} responsibilities`}>
                     {role.highlights.map((highlight) => (
                       <motion.li
                         key={highlight}
                         whileHover={reduceMotion ? undefined : { x: 3 }}
-                        className="flex items-start gap-2.5 text-sm leading-relaxed text-muted-foreground"
+                        className="flex items-start gap-2 sm:gap-2.5 text-xs sm:text-sm leading-relaxed text-muted-foreground"
                       >
                         <CheckCircle2
                           aria-hidden="true"
-                          className="mt-0.5 size-4 shrink-0 text-primary"
+                          className="mt-0.5 size-3.5 sm:size-4 shrink-0 text-primary"
                         />
                         <span>{highlight}</span>
                       </motion.li>
@@ -148,9 +148,9 @@ export function ExperienceTimeline() {
                   </ul>
                 </CardContent>
 
-                <CardFooter className="flex flex-wrap gap-2 border-t border-border/70 px-5 py-4 sm:px-7">
+                <CardFooter className="flex flex-wrap gap-1.5 sm:gap-2 border-t border-border/70 p-4 sm:px-7">
                   {role.stack.map((technology) => (
-                    <Badge key={technology} variant="outline" className="font-mono">
+                    <Badge key={technology} variant="outline" className="font-mono text-[10px] sm:text-xs">
                       {technology}
                     </Badge>
                   ))}

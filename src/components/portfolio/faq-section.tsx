@@ -44,15 +44,15 @@ const faqs = [
 
 export function FAQSection() {
   return (
-    <section id="faq" className="py-20 border-b border-border">
-      <BlurFade delay={0.1} className="mb-12 text-left">
+    <section id="faq" className="py-12 sm:py-20 border-b border-border">
+      <BlurFade delay={0.1} className="mb-8 sm:mb-12 text-left">
         <p className="text-xs font-mono text-primary font-semibold mb-2">
           07 / Frequently Asked Questions
         </p>
-        <h2 className="text-3xl sm:text-4xl font-bold text-foreground tracking-tight">
+        <h2 className="text-2xl sm:text-4xl font-bold text-foreground tracking-tight">
           Common questions & clear answers.
         </h2>
-        <p className="text-muted-foreground max-w-2xl mt-2 text-sm leading-relaxed">
+        <p className="text-muted-foreground max-w-2xl mt-2 text-xs sm:text-sm leading-relaxed">
           Everything you need to know about starting a project, technical collaboration, and delivery terms.
         </p>
       </BlurFade>

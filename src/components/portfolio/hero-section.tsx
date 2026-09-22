@@ -44,7 +44,7 @@ export function HeroSection() {
           </BlurFade>
 
           <BlurFade delay={0.15}>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-foreground leading-[1.1]">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-foreground leading-[1.15] sm:leading-[1.1]">
               <motion.span
                 initial={reduceMotion ? false : { opacity: 0, x: -14 }}
                 animate={reduceMotion ? undefined : { opacity: 1, x: 0 }}
@@ -59,19 +59,19 @@ export function HeroSection() {
           </BlurFade>
 
           <BlurFade delay={0.2}>
-            <p className="text-base sm:text-lg text-muted-foreground max-w-2xl leading-relaxed">
+            <p className="text-sm sm:text-lg text-muted-foreground max-w-2xl leading-relaxed">
               Full-stack engineering for founders and teams who need thoughtful product work across Python, FastAPI, Node.js, Next.js, and the systems around them.
             </p>
           </BlurFade>
 
           <BlurFade delay={0.25}>
-            <div className="flex flex-wrap items-center gap-4 pt-2">
-              <a href="#contact">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 pt-2">
+              <a href="#contact" className="w-full sm:w-auto">
                 <ShimmerButton
                   shimmerColor="var(--primary-foreground)"
                   background="var(--primary)"
                   borderRadius="100px"
-                  className="text-sm font-bold text-primary-foreground px-7 py-3 shadow-md cursor-pointer"
+                  className="text-xs sm:text-sm font-bold text-primary-foreground px-6 sm:px-7 py-3 shadow-md cursor-pointer justify-center w-full sm:w-auto"
                 >
                   Start a Project
                   <ArrowUpRight data-icon="inline-end" className="ml-2 size-4 text-primary-foreground" />
@@ -84,7 +84,7 @@ export function HeroSection() {
                 onClick={handleOpenCalendly}
                 className={cn(
                   buttonVariants({ variant: "outline", size: "lg" }),
-                  "rounded-full border-border bg-card hover:bg-accent text-foreground backdrop-blur-md cursor-pointer"
+                  "rounded-full border-border bg-card hover:bg-accent text-foreground backdrop-blur-md cursor-pointer justify-center w-full sm:w-auto text-xs sm:text-sm h-11"
                 )}
               >
                 <Calendar className="mr-2 size-4 text-primary" />

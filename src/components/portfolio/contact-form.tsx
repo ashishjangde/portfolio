@@ -96,12 +96,12 @@ ${formData.description}
         {/* Ambient background glow */}
         <div className="absolute top-0 right-0 -z-10 h-48 w-48 rounded-full bg-emerald-500/10 blur-3xl pointer-events-none" />
 
-        <CardHeader className="pb-6 border-b border-zinc-800/80 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <CardHeader className="p-4 sm:p-6 pb-4 sm:pb-6 border-b border-zinc-800/80 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <div>
-            <CardTitle className="text-xl sm:text-2xl font-bold text-white">
+            <CardTitle className="text-lg sm:text-2xl font-bold text-white leading-tight">
               Tell me about your product.
             </CardTitle>
-            <CardDescription className="text-xs text-zinc-400 mt-1">
+            <CardDescription className="text-xs text-zinc-400 mt-1 leading-relaxed">
               Share the essentials and I&apos;ll reply with practical engineering feedback and clear next steps.
             </CardDescription>
           </div>
@@ -111,23 +111,23 @@ ${formData.description}
             whileTap={{ scale: 0.96 }}
             onClick={handleOpenCalendly}
             type="button"
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-emerald-500/40 bg-emerald-500/10 text-emerald-400 text-xs font-semibold hover:bg-emerald-500/20 transition-all cursor-pointer shadow-2xs shrink-0 self-start sm:self-auto"
+            className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full border border-emerald-500/40 bg-emerald-500/10 text-emerald-400 text-xs font-semibold hover:bg-emerald-500/20 transition-all cursor-pointer shadow-2xs shrink-0 w-full sm:w-auto"
           >
             <Calendar className="size-3.5" /> Book a 30-min Call
           </motion.button>
         </CardHeader>
 
-        <CardContent className="pt-6">
+        <CardContent className="p-4 sm:p-6 pt-4 sm:pt-6">
           {submitted ? (
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="flex flex-col items-center gap-4 py-12 text-center"
+              className="flex flex-col items-center gap-4 py-8 sm:py-12 text-center"
             >
               <div className="flex size-14 items-center justify-center rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 mx-auto">
                 <CheckCircle2 className="size-8" />
               </div>
-              <h4 className="text-xl font-bold text-white">Project Inquiry Received!</h4>
+              <h4 className="text-lg sm:text-xl font-bold text-white">Project Inquiry Received!</h4>
               <p className="text-xs text-zinc-400 max-w-md mx-auto leading-relaxed">
                 Thank you for reaching out, <strong className="text-white">{formData.name}</strong>. Your request was delivered, and I&apos;ll follow up by email after reviewing the project details.
               </p>
@@ -139,7 +139,7 @@ ${formData.description}
               </button>
             </motion.div>
           ) : (
-            <form id="contact-inquiry-form" onSubmit={handleSubmit} className="flex flex-col gap-6">
+            <form id="contact-inquiry-form" onSubmit={handleSubmit} className="flex flex-col gap-4 sm:gap-6">
               {submitError && (
                 <Alert variant="destructive">
                   <AlertCircle aria-hidden="true" />
@@ -148,7 +148,7 @@ ${formData.description}
                 </Alert>
               )}
 
-              <FieldGroup className="gap-5">
+              <FieldGroup className="gap-4 sm:gap-5">
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                   <Field>
                     <FieldLabel htmlFor="name" className="font-mono text-xs text-zinc-400">
@@ -260,8 +260,8 @@ ${formData.description}
         </CardContent>
 
         {!submitted && (
-          <CardFooter className="pt-2 border-t border-zinc-800/80 flex flex-wrap items-center justify-between gap-4">
-            <span className="text-[11px] text-zinc-400 font-mono">
+          <CardFooter className="p-4 sm:p-6 pt-3 sm:pt-4 border-t border-zinc-800/80 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
+            <span className="text-[11px] text-zinc-400 font-mono text-center sm:text-left">
               Direct 1-on-1 engineering response.
             </span>
 
@@ -269,7 +269,7 @@ ${formData.description}
               form="contact-inquiry-form"
               type="submit"
               disabled={loading}
-              className="bg-emerald-600 text-white hover:bg-emerald-500 rounded-full px-6 text-xs font-semibold cursor-pointer shadow-lg shadow-emerald-950/50"
+              className="w-full sm:w-auto bg-emerald-600 text-white hover:bg-emerald-500 rounded-full px-6 py-2.5 text-xs font-semibold cursor-pointer shadow-lg shadow-emerald-950/50"
             >
               {loading ? "Sending..." : "Send Project Inquiry"}
               <Send data-icon="inline-end" />

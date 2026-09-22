@@ -42,15 +42,15 @@ const targetClients = [
 
 export function WhoIWorkWith() {
   return (
-    <section id="clients" className="py-20 border-b border-border">
-      <BlurFade delay={0.1} className="mb-12 text-left">
+    <section id="clients" className="py-12 sm:py-20 border-b border-border">
+      <BlurFade delay={0.1} className="mb-8 sm:mb-12 text-left">
         <p className="text-xs font-mono text-primary font-semibold mb-2">
           03 / Client Profiles & Fit
         </p>
-        <h2 className="text-3xl sm:text-4xl font-bold text-foreground tracking-tight">
+        <h2 className="text-2xl sm:text-4xl font-bold text-foreground tracking-tight">
           Who I work with.
         </h2>
-        <p className="text-muted-foreground max-w-2xl mt-2 text-sm leading-relaxed">
+        <p className="text-muted-foreground max-w-2xl mt-2 text-xs sm:text-sm leading-relaxed">
           Whether you need a full MVP built from scratch or an experienced full-stack engineer to lead a complex backend system.
         </p>
       </BlurFade>
@@ -66,7 +66,7 @@ export function WhoIWorkWith() {
                 transition={{ type: "spring", stiffness: 350, damping: 22 }}
                 className="h-full group relative overflow-hidden rounded-2xl"
               >
-                <div className="h-full p-6 rounded-2xl border border-border bg-card/80 backdrop-blur-md flex flex-col justify-between hover:border-primary/50 hover:shadow-lg transition-all duration-300">
+                <div className="h-full p-4 sm:p-6 rounded-2xl border border-border bg-card/80 backdrop-blur-md flex flex-col justify-between hover:border-primary/50 hover:shadow-lg transition-all duration-300">
                   <div>
                     <div className="flex items-center justify-between mb-4">
                       <div className="flex size-11 items-center justify-center rounded-xl bg-primary/10 border border-primary/20 text-primary group-hover:bg-primary group-hover:text-primary-foreground group-hover:scale-110 transition-all duration-300 shadow-xs">

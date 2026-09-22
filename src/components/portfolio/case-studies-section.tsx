@@ -12,17 +12,17 @@ export function CaseStudiesSection() {
   const reduceMotion = useReducedMotion();
 
   return (
-    <section id="work" className="py-20 border-b border-border">
-      <BlurFade delay={0.1} className="mb-12 text-left">
+    <section id="work" className="py-12 sm:py-20 border-b border-border">
+      <BlurFade delay={0.1} className="mb-8 sm:mb-12 text-left">
         <p className="text-xs font-mono text-primary font-semibold mb-2">
           02 / Featured Case Studies & Live Products
         </p>
-        <h2 className="text-3xl sm:text-4xl font-bold text-foreground tracking-tight">
+        <h2 className="text-2xl sm:text-4xl font-bold text-foreground tracking-tight">
           Real full-stack web applications shipped.
         </h2>
       </BlurFade>
 
-      <div className="flex flex-col gap-12">
+      <div className="flex flex-col gap-8 sm:gap-12">
         {/* CrypAlgos Case Study */}
         <BlurFade delay={0.2}>
           <motion.div
@@ -31,7 +31,7 @@ export function CaseStudiesSection() {
             whileHover={reduceMotion ? undefined : { y: -5 }}
             viewport={{ once: true, amount: 0.16 }}
             transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-            className="group relative flex flex-col gap-8 overflow-hidden rounded-2xl border border-border bg-card p-6 text-left shadow-2xl backdrop-blur-xl transition-[border-color,box-shadow] duration-500 hover:border-primary/50 hover:shadow-primary/5 sm:p-8"
+            className="group relative flex flex-col gap-6 sm:gap-8 overflow-hidden rounded-2xl border border-border bg-card p-4 sm:p-8 text-left shadow-2xl backdrop-blur-xl transition-[border-color,box-shadow] duration-500 hover:border-primary/50 hover:shadow-primary/5"
           >
             <div className="pointer-events-none absolute inset-x-0 top-0 h-px origin-left scale-x-0 bg-primary transition-transform duration-500 group-hover:scale-x-100 motion-reduce:transition-none" />
             
@@ -166,7 +166,7 @@ export function CaseStudiesSection() {
             whileHover={reduceMotion ? undefined : { y: -5 }}
             viewport={{ once: true, amount: 0.16 }}
             transition={{ duration: 0.55, delay: 0.06, ease: [0.22, 1, 0.36, 1] }}
-            className="group relative flex flex-col gap-6 overflow-hidden rounded-2xl border border-border bg-card p-6 text-left shadow-xl backdrop-blur-xl transition-[border-color,box-shadow] duration-500 hover:border-primary/50 hover:shadow-primary/5 sm:p-8"
+            className="group relative flex flex-col gap-6 overflow-hidden rounded-2xl border border-border bg-card p-4 sm:p-8 text-left shadow-xl backdrop-blur-xl transition-[border-color,box-shadow] duration-500 hover:border-primary/50 hover:shadow-primary/5"
           >
             <div className="pointer-events-none absolute inset-x-0 top-0 h-px origin-left scale-x-0 bg-primary transition-transform duration-500 group-hover:scale-x-100 motion-reduce:transition-none" />
             <div className="flex flex-wrap items-center justify-between gap-4 pb-6 border-b border-border">
