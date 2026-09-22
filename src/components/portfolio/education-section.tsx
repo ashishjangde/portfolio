@@ -14,8 +14,8 @@ export function EducationSection() {
             <GraduationCap className="size-5 sm:size-6" />
           </div>
           <div>
-            <p className="text-xs font-mono text-primary font-semibold">Education</p>
-            <h2 className="text-base sm:text-xl font-bold text-foreground">Bachelor of Computer Applications (BCA)</h2>
+            <h2 className="text-xs font-mono text-primary font-semibold">Education</h2>
+            <h3 className="text-base sm:text-xl font-bold text-foreground">Bachelor of Computer Applications (BCA)</h3>
             <p className="text-xs text-muted-foreground mt-0.5">Shri Vaishnav Institute of Management & Science · Indore, India</p>
           </div>
         </div>

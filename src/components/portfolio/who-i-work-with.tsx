@@ -80,7 +80,7 @@ export function WhoIWorkWith() {
                     <h3 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors">
                       {client.title}
                     </h3>
-                    <p className="text-xs font-mono text-primary/80 mt-0.5 mb-3">
+                    <p className="text-xs font-mono text-primary font-medium mt-0.5 mb-3">
                       {client.subtitle}
                     </p>
                     <p className="text-xs text-muted-foreground leading-relaxed">
