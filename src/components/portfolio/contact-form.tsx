@@ -25,6 +25,8 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
+import { ESTIMATED_BUDGETS } from "@/config/portfolio-data";
+
 export function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -35,6 +37,7 @@ export function ContactForm() {
     company: "",
     projectType: "MVP Development",
     timeline: "1–2 Months",
+    budget: "$5k–$10k",
     description: "",
   });
 
@@ -57,13 +60,14 @@ export function ContactForm() {
           name: formData.name,
           email: formData.email,
           company: formData.company || "N/A",
-          subject: `New Freelance Project Inquiry from ${formData.name}`,
+          subject: `New Project Inquiry from ${formData.name} (${formData.budget})`,
           message: `
 Name: ${formData.name}
 Email: ${formData.email}
 Company: ${formData.company || "N/A"}
 Project Type: ${formData.projectType}
 Timeline: ${formData.timeline}
+Estimated Budget: ${formData.budget}
 
 Project Description:
 ${formData.description}
@@ -218,27 +222,53 @@ ${formData.description}
                   </Field>
                 </div>
 
-                <Field>
-                  <FieldLabel htmlFor="timeline" className="font-mono text-xs text-zinc-400">
-                    Preferred Timeline
-                  </FieldLabel>
-                  <Select
-                    value={formData.timeline}
-                    onValueChange={(val) => setFormData({ ...formData, timeline: val || "" })}
-                  >
-                    <SelectTrigger id="timeline" className="h-10 w-full cursor-pointer border-zinc-800 bg-zinc-900/90 text-xs text-white focus:border-emerald-500 sm:max-w-xs">
-                      <SelectValue placeholder="Select a timeline" />
-                    </SelectTrigger>
-                    <SelectContent className="border-zinc-800 bg-zinc-900 text-white shadow-xl">
-                      <SelectGroup>
-                        <SelectItem value="2–4 Weeks" className="text-zinc-200 hover:bg-emerald-500/20 hover:text-emerald-300 focus:bg-emerald-500/20 focus:text-emerald-300 data-[highlighted]:bg-emerald-500/20 data-[highlighted]:text-emerald-300 cursor-pointer">2–4 Weeks</SelectItem>
-                        <SelectItem value="1–2 Months" className="text-zinc-200 hover:bg-emerald-500/20 hover:text-emerald-300 focus:bg-emerald-500/20 focus:text-emerald-300 data-[highlighted]:bg-emerald-500/20 data-[highlighted]:text-emerald-300 cursor-pointer">1–2 Months</SelectItem>
-                        <SelectItem value="3+ Months" className="text-zinc-200 hover:bg-emerald-500/20 hover:text-emerald-300 focus:bg-emerald-500/20 focus:text-emerald-300 data-[highlighted]:bg-emerald-500/20 data-[highlighted]:text-emerald-300 cursor-pointer">3+ Months</SelectItem>
-                        <SelectItem value="Flexible / Not sure" className="text-zinc-200 hover:bg-emerald-500/20 hover:text-emerald-300 focus:bg-emerald-500/20 focus:text-emerald-300 data-[highlighted]:bg-emerald-500/20 data-[highlighted]:text-emerald-300 cursor-pointer">Flexible / Not sure</SelectItem>
-                      </SelectGroup>
-                    </SelectContent>
-                  </Select>
-                </Field>
+                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                  <Field>
+                    <FieldLabel htmlFor="timeline" className="font-mono text-xs text-zinc-400">
+                      Preferred Timeline
+                    </FieldLabel>
+                    <Select
+                      value={formData.timeline}
+                      onValueChange={(val) => setFormData({ ...formData, timeline: val || "" })}
+                    >
+                      <SelectTrigger id="timeline" className="h-10 w-full cursor-pointer border-zinc-800 bg-zinc-900/90 text-xs text-white focus:border-emerald-500">
+                        <SelectValue placeholder="Select a timeline" />
+                      </SelectTrigger>
+                      <SelectContent className="border-zinc-800 bg-zinc-900 text-white shadow-xl">
+                        <SelectGroup>
+                          <SelectItem value="2–4 Weeks" className="text-zinc-200 hover:bg-emerald-500/20 hover:text-emerald-300 focus:bg-emerald-500/20 focus:text-emerald-300 data-[highlighted]:bg-emerald-500/20 data-[highlighted]:text-emerald-300 cursor-pointer">2–4 Weeks</SelectItem>
+                          <SelectItem value="1–2 Months" className="text-zinc-200 hover:bg-emerald-500/20 hover:text-emerald-300 focus:bg-emerald-500/20 focus:text-emerald-300 data-[highlighted]:bg-emerald-500/20 data-[highlighted]:text-emerald-300 cursor-pointer">1–2 Months</SelectItem>
+                          <SelectItem value="3+ Months" className="text-zinc-200 hover:bg-emerald-500/20 hover:text-emerald-300 focus:bg-emerald-500/20 focus:text-emerald-300 data-[highlighted]:bg-emerald-500/20 data-[highlighted]:text-emerald-300 cursor-pointer">3+ Months</SelectItem>
+                          <SelectItem value="Flexible / Not sure" className="text-zinc-200 hover:bg-emerald-500/20 hover:text-emerald-300 focus:bg-emerald-500/20 focus:text-emerald-300 data-[highlighted]:bg-emerald-500/20 data-[highlighted]:text-emerald-300 cursor-pointer">Flexible / Not sure</SelectItem>
+                        </SelectGroup>
+                      </SelectContent>
+                    </Select>
+                  </Field>
+
+                  <Field>
+                    <FieldLabel htmlFor="budget" className="font-mono text-xs text-zinc-400">
+                      Estimated Budget
+                    </FieldLabel>
+                    <Select
+                      value={formData.budget}
+                      onValueChange={(val) => setFormData({ ...formData, budget: val || "" })}
+                    >
+                      <SelectTrigger id="budget" className="h-10 w-full cursor-pointer border-zinc-800 bg-zinc-900/90 text-xs text-white focus:border-emerald-500">
+                        <SelectValue placeholder="Select estimated budget" />
+                      </SelectTrigger>
+                      <SelectContent className="border-zinc-800 bg-zinc-900 text-white shadow-xl">
+                        <SelectGroup>
+                          {ESTIMATED_BUDGETS.map((b) => (
+                            <SelectItem key={b} value={b} className="text-zinc-200 hover:bg-emerald-500/20 hover:text-emerald-300 focus:bg-emerald-500/20 focus:text-emerald-300 data-[highlighted]:bg-emerald-500/20 data-[highlighted]:text-emerald-300 cursor-pointer">
+                              {b}
+                            </SelectItem>
+                          ))}
+                        </SelectGroup>
+                      </SelectContent>
+                    </Select>
+                  </Field>
+                </div>
+
 
                 <Field>
                   <FieldLabel htmlFor="description" className="font-mono text-xs text-zinc-400">

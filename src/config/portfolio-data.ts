@@ -127,6 +127,15 @@ export const HERO_HIGHLIGHTS = [
   ["03", "Systems", "APIs · WebSockets"],
 ] as const;
 
+export const ESTIMATED_BUDGETS = [
+  "<$2k",
+  "$2k–$5k",
+  "$5k–$10k",
+  "$10k–$25k",
+  "$25k+",
+  "Flexible / Not sure",
+] as const;
+
 export const TECH_ITEMS: TechItemConfig[] = [
   {
     name: "LangChain",
@@ -209,3 +218,4 @@ export const TECH_ITEMS: TechItemConfig[] = [
     iconPath: "/tech-icons/tailwindcss.svg",
   },
 ];
+

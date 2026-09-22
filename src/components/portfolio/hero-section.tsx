@@ -39,7 +39,7 @@ export function HeroSection() {
                 animate={reduceMotion ? undefined : { opacity: [0.45, 1, 0.45], scale: [0.9, 1.15, 0.9] }}
                 transition={reduceMotion ? undefined : { duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
               />
-              Full-Stack Engineer · Next.js · Python · FastAPI
+              Startup-Focused Full-Stack Engineer · Python · FastAPI · Next.js
             </div>
           </BlurFade>
 
@@ -50,32 +50,42 @@ export function HeroSection() {
                 animate={reduceMotion ? undefined : { opacity: 1, x: 0 }}
                 transition={reduceMotion ? undefined : { duration: 0.65, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
               >
-                I build the product your idea needs
+                I build production-ready web products
               </motion.span>{" "}
               <AnimatedGradientText colorFrom="var(--primary)" colorTo="var(--foreground)" speed={1.2}>
-                from first API to final handover.
+                for startups.
               </AnimatedGradientText>
             </h1>
           </BlurFade>
 
           <BlurFade delay={0.2}>
             <p className="text-sm sm:text-lg text-muted-foreground max-w-2xl leading-relaxed">
-              Full-stack engineering for founders and teams who need thoughtful product work across Python, FastAPI, Node.js, Next.js, and the systems around them.
+              Full-stack engineer specializing in Python, FastAPI, React, Next.js, and scalable backend systems. I help startup founders take products from idea → architecture → MVP → production.
             </p>
           </BlurFade>
 
           <BlurFade delay={0.25}>
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 pt-2">
-              <a href="#contact" className="w-full sm:w-auto">
+              <a href="#work" className="w-full sm:w-auto">
                 <ShimmerButton
                   shimmerColor="var(--primary-foreground)"
                   background="var(--primary)"
                   borderRadius="100px"
                   className="text-xs sm:text-sm font-bold text-primary-foreground px-6 sm:px-7 py-3 shadow-md cursor-pointer justify-center w-full sm:w-auto"
                 >
-                  Start a Project
+                  View Case Studies
                   <ArrowUpRight data-icon="inline-end" className="ml-2 size-4 text-primary-foreground" />
                 </ShimmerButton>
+              </a>
+
+              <a
+                href="#contact"
+                className={cn(
+                  buttonVariants({ variant: "outline", size: "lg" }),
+                  "rounded-full border-border bg-card hover:bg-accent text-foreground backdrop-blur-md cursor-pointer justify-center w-full sm:w-auto text-xs sm:text-sm h-11"
+                )}
+              >
+                Start a Project
               </a>
 
               <motion.button
@@ -83,12 +93,12 @@ export function HeroSection() {
                 whileTap={{ scale: 0.97 }}
                 onClick={handleOpenCalendly}
                 className={cn(
-                  buttonVariants({ variant: "outline", size: "lg" }),
-                  "rounded-full border-border bg-card hover:bg-accent text-foreground backdrop-blur-md cursor-pointer justify-center w-full sm:w-auto text-xs sm:text-sm h-11"
+                  buttonVariants({ variant: "ghost", size: "lg" }),
+                  "rounded-full text-muted-foreground hover:text-foreground cursor-pointer justify-center w-full sm:w-auto text-xs sm:text-sm h-11"
                 )}
               >
                 <Calendar className="mr-2 size-4 text-primary" />
-                Book a 30-min Call
+                Book a Call
               </motion.button>
             </div>
           </BlurFade>
@@ -134,7 +144,7 @@ export function HeroSection() {
             <div className="relative aspect-[4/5] overflow-hidden rounded-[1.75rem] bg-muted shadow-xl transition-shadow duration-500 group-hover:shadow-2xl">
               <Image
                 src="/assets/ashish-jangde.webp"
-                alt="Ashish Jangde - Full-Stack Engineer"
+                alt="Ashish Jangde - Startup-Focused Full-Stack Engineer"
                 fill
                 priority
                 quality={85}
@@ -143,7 +153,7 @@ export function HeroSection() {
               />
             </div>
             <figcaption className="mt-4 flex items-center justify-between gap-4 border-b border-border pb-3 font-mono text-[11px] text-muted-foreground">
-              <span className="font-semibold text-primary">Full-stack engineer</span>
+              <span className="font-semibold text-primary">Founding / Full-Stack Engineer</span>
               <span>Indore · Remote</span>
             </figcaption>
           </motion.figure>
@@ -164,24 +174,24 @@ export function HeroSection() {
                 <Layers aria-hidden="true" className="size-4.5" />
               </div>
               <div>
-                <p className="mb-1 font-mono text-xs font-semibold text-primary">
-                  Production Engineering Credibility
+                <p className="mb-1 font-mono text-xs font-semibold text-primary uppercase tracking-wide">
+                  Founding Engineering Proof
                 </p>
                 <h3 className="text-base font-bold text-foreground sm:text-lg">
-                  Kalpi.ai — Backed by Rainmatter by Zerodha
+                  Founding Engineer — Kalpi Capital (Zerodha Rainmatter-backed)
                 </h3>
                 <p className="mt-1 max-w-xl text-xs leading-relaxed text-muted-foreground">
-                  Engineered portfolio analytics microservices, ClickHouse time-series querying, broker WebSocket sync, and automated order-execution workflows.
+                  Built backend systems, portfolio analytics microservices, broker API integrations, ClickHouse time-series pipelines, and automated trading infrastructure from 0 to production.
                 </p>
               </div>
             </div>
 
             <div className="flex shrink-0 flex-wrap items-center gap-2 md:max-w-[270px] md:justify-end">
               <Badge variant="secondary" className="font-mono text-xs">
-                Full-Stack & Backend Ownership
+                Founding Engineer
               </Badge>
               <Badge variant="outline" className="font-mono text-xs border-primary/30 text-primary bg-primary/10">
-                Real-Time Systems
+                Zerodha Rainmatter Backed
               </Badge>
             </div>
           </motion.div>

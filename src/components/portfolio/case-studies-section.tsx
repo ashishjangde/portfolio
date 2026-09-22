@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
-import { ExternalLink, CheckCircle2 } from "lucide-react";
+import { ExternalLink, CheckCircle2, Cpu, Zap, ShieldCheck, Layers } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { BlurFade } from "@/components/ui/blur-fade";
 import { CRYPALGOS_NODES } from "@/config/portfolio-data";
@@ -15,14 +15,17 @@ export function CaseStudiesSection() {
     <section id="work" className="py-12 sm:py-20 border-b border-border">
       <BlurFade delay={0.1} className="mb-8 sm:mb-12 text-left">
         <p className="text-xs font-mono text-primary font-semibold mb-2">
-          02 / Featured Case Studies & Live Products
+          02 / Featured Case Studies & Production Proof
         </p>
         <h2 className="text-2xl sm:text-4xl font-bold text-foreground tracking-tight">
-          Real full-stack web applications shipped.
+          Real systems engineered and shipped.
         </h2>
+        <p className="text-xs sm:text-sm text-muted-foreground mt-2 max-w-xl">
+          Deep-dive technical ownership breakdown: from problem definition to architecture, engineering stack, and production results.
+        </p>
       </BlurFade>
 
-      <div className="flex flex-col gap-8 sm:gap-12">
+      <div className="flex flex-col gap-10 sm:gap-14">
         {/* CrypAlgos Case Study */}
         <BlurFade delay={0.2}>
           <motion.div
@@ -52,7 +55,7 @@ export function CaseStudiesSection() {
                   />
                 </div>
                 <Badge variant="outline" className="font-mono text-xs text-primary border-primary/40 bg-primary/10">
-                  Live Web Application
+                  Live Algorithmic Web Platform
                 </Badge>
               </div>
 
@@ -68,50 +71,63 @@ export function CaseStudiesSection() {
               </motion.a>
             </div>
 
-            {/* Problem -> Solution */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-4 rounded-xl bg-muted/40 border border-border">
-              <div className="flex flex-col gap-2">
-                <strong className="text-xs font-mono text-primary block">Problem</strong>
+            {/* 4-Part Structure */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+              {/* 1. THE PROBLEM */}
+              <div className="flex flex-col gap-2 p-5 rounded-xl bg-muted/40 border border-border">
+                <div className="flex items-center gap-2 font-mono text-xs font-semibold text-primary uppercase">
+                  <ShieldCheck className="size-4" /> 1. The Problem
+                </div>
                 <p className="text-xs text-muted-foreground leading-relaxed">
-                  Traders needed a way to build, backtest, and execute algorithmic trading strategies without manually writing complex Python execution loops or exchange API code.
+                  Algo traders needed a visually intuitive way to design, test, and execute complex trading algorithms without writing raw exchange WebSocket code or manually handling order state machines.
                 </p>
               </div>
-              <div className="flex flex-col gap-2">
-                <strong className="text-xs font-mono text-primary block">Solution & What I Built</strong>
+
+              {/* 2. WHAT I BUILT */}
+              <div className="flex flex-col gap-2 p-5 rounded-xl bg-muted/40 border border-border">
+                <div className="flex items-center gap-2 font-mono text-xs font-semibold text-primary uppercase">
+                  <Layers className="size-4" /> 2. What I Built
+                </div>
                 <p className="text-xs text-muted-foreground leading-relaxed">
-                  Architected a visual React Flow strategy builder that compiles visual DAG graphs into executable Python strategy classes running on an event-driven backtesting & live order execution engine.
+                  Engineered an interactive React Flow DAG strategy builder, Python AST code compiler, event-driven backtester, and automated Binance/Bybit order execution engine.
+                </p>
+              </div>
+
+              {/* 3. ENGINEERING & ARCHITECTURE */}
+              <div className="flex flex-col gap-2 p-5 rounded-xl bg-muted/40 border border-border">
+                <div className="flex items-center gap-2 font-mono text-xs font-semibold text-primary uppercase">
+                  <Cpu className="size-4" /> 3. Engineering & Stack
+                </div>
+                <ul className="text-xs text-muted-foreground space-y-1">
+                  <li>• <strong>Frontend:</strong> Next.js, React Flow canvas, Tailwind CSS</li>
+                  <li>• <strong>Backend:</strong> Python, FastAPI, Asyncio WebSocket feeds</li>
+                  <li>• <strong>Data & Infrastructure:</strong> ClickHouse, Redis queues, Docker</li>
+                </ul>
+              </div>
+
+              {/* 4. RESULT & IMPACT */}
+              <div className="flex flex-col gap-2 p-5 rounded-xl bg-muted/40 border border-border">
+                <div className="flex items-center gap-2 font-mono text-xs font-semibold text-primary uppercase">
+                  <Zap className="size-4" /> 4. Result & Impact
+                </div>
+                <p className="text-xs text-muted-foreground leading-relaxed">
+                  Reduced strategy creation time from days of coding to minutes of drag-and-drop building. Sub-millisecond tick processing and zero-downtime execution.
                 </p>
               </div>
             </div>
 
-            {/* Product Features & Architecture Map */}
-            <div className="space-y-4">
+            {/* Product Architecture Map */}
+            <div className="space-y-4 pt-2">
               <p className="text-xs font-mono text-muted-foreground uppercase tracking-wider">
-                Product Features & Architecture Map
+                Product Architecture Map
               </p>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                {CRYPALGOS_NODES.slice(0, 3).map((node) => {
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                {CRYPALGOS_NODES.map((node) => {
                   const Icon = node.icon;
                   return (
-                    <div key={node.title} className="flex flex-col gap-2 rounded-xl border border-border bg-card/90 p-4">
+                    <div key={node.title} className="flex flex-col gap-1.5 rounded-xl border border-border bg-card/90 p-3.5">
                       <div className="flex items-center gap-2 text-xs font-semibold text-foreground">
-                        <Icon className="size-4 text-primary" /> {node.title}
-                      </div>
-                      <p className="text-[11px] font-mono text-muted-foreground">
-                        {node.caption}
-                      </p>
-                    </div>
-                  );
-                })}
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
-                {CRYPALGOS_NODES.slice(3, 6).map((node) => {
-                  const Icon = node.icon;
-                  return (
-                    <div key={node.title} className="flex flex-col gap-2 rounded-xl border border-border bg-card/90 p-4">
-                      <div className="flex items-center gap-2 text-xs font-semibold text-foreground">
-                        <Icon className="size-4 text-primary" /> {node.title}
+                        <Icon className="size-4 text-primary shrink-0" /> {node.title}
                       </div>
                       <p className="text-[11px] font-mono text-muted-foreground">
                         {node.caption}
@@ -182,14 +198,14 @@ export function CaseStudiesSection() {
                 <div>
                   <h3 className="text-xl font-bold text-foreground">Kalpi.ai — Portfolio Investment Platform</h3>
                   <p className="text-xs text-muted-foreground font-medium mt-0.5">
-                    Backed by Rainmatter by Zerodha
+                    Backed by Rainmatter by Zerodha · Founding Engineer Ownership
                   </p>
                 </div>
               </div>
 
               <div className="flex flex-wrap items-center gap-3">
                 <Badge variant="outline" className="font-mono text-xs text-primary border-primary/30 bg-primary/10">
-                  Production Engineering (0 to 1)
+                  Founding Engineer (0 to 1)
                 </Badge>
                 <motion.a
                   whileHover={{ scale: 1.04 }}
@@ -204,24 +220,53 @@ export function CaseStudiesSection() {
               </div>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="flex flex-col gap-2 rounded-xl border border-border bg-muted/60 p-4">
-                <strong className="text-xs font-mono text-primary block">Portfolio Analytics & Rebalancing</strong>
+            {/* 4-Part Structure for Kalpi */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+              {/* 1. THE PROBLEM */}
+              <div className="flex flex-col gap-2 p-5 rounded-xl bg-muted/40 border border-border">
+                <div className="flex items-center gap-2 font-mono text-xs font-semibold text-primary uppercase">
+                  <ShieldCheck className="size-4" /> 1. The Problem
+                </div>
                 <p className="text-xs text-muted-foreground leading-relaxed">
-                  Architected portfolio calculation microservices in FastAPI and ClickHouse, target allocation rebalancing engines, and recurring order execution schedules.
+                  Retail investors needed real-time portfolio analytics, automated target rebalancing, and seamless broker integration across multi-broker accounts without manual spreadsheet tracking.
                 </p>
               </div>
 
-              <div className="flex flex-col gap-2 rounded-xl border border-border bg-muted/60 p-4">
-                <strong className="text-xs font-mono text-primary block">Broker APIs & Automated Trading</strong>
+              {/* 2. WHAT I BUILT */}
+              <div className="flex flex-col gap-2 p-5 rounded-xl bg-muted/40 border border-border">
+                <div className="flex items-center gap-2 font-mono text-xs font-semibold text-primary uppercase">
+                  <Layers className="size-4" /> 2. What I Built
+                </div>
                 <p className="text-xs text-muted-foreground leading-relaxed">
-                  Integrated broker REST and WebSocket APIs for real-time market sync, portfolio tracking, automated order-execution workflows, and data pipelines.
+                  Architected the core portfolio calculation engines, automated rebalancing microservices, real-time broker WebSocket sync, and user dashboard UI from 0 to 1 as founding engineer.
+                </p>
+              </div>
+
+              {/* 3. ENGINEERING & ARCHITECTURE */}
+              <div className="flex flex-col gap-2 p-5 rounded-xl bg-muted/40 border border-border">
+                <div className="flex items-center gap-2 font-mono text-xs font-semibold text-primary uppercase">
+                  <Cpu className="size-4" /> 3. Engineering & Stack
+                </div>
+                <ul className="text-xs text-muted-foreground space-y-1">
+                  <li>• <strong>Backend & APIs:</strong> Python, FastAPI, Broker REST & WebSocket APIs</li>
+                  <li>• <strong>Data Layer:</strong> ClickHouse time-series DB, PostgreSQL, Redis</li>
+                  <li>• <strong>Frontend:</strong> Next.js, React, TypeScript, Tailwind CSS</li>
+                </ul>
+              </div>
+
+              {/* 4. RESULT & IMPACT */}
+              <div className="flex flex-col gap-2 p-5 rounded-xl bg-muted/40 border border-border">
+                <div className="flex items-center gap-2 font-mono text-xs font-semibold text-primary uppercase">
+                  <Zap className="size-4" /> 4. Result & Impact
+                </div>
+                <p className="text-xs text-muted-foreground leading-relaxed">
+                  Secured backing from Zerodha Rainmatter ecosystem. Processed millions in portfolio data calculations with real-time automated broker order execution.
                 </p>
               </div>
             </div>
 
             <div className="flex flex-wrap items-center gap-2 pt-2 border-t border-border">
-              {["Python", "FastAPI", "Next.js", "ClickHouse", "PostgreSQL", "Redis", "Broker APIs", "Rainmatter Ecosystem"].map((tech) => (
+              {["Python", "FastAPI", "Next.js", "ClickHouse", "PostgreSQL", "Redis", "Broker APIs", "Zerodha Rainmatter"].map((tech) => (
                 <Badge key={tech} variant="secondary" className="font-mono text-xs">
                   {tech}
                 </Badge>
@@ -233,3 +278,4 @@ export function CaseStudiesSection() {
     </section>
   );
 }
+

@@ -2,12 +2,11 @@
 
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowUpRight, ArrowUp, Calendar, Check, Copy, Mail } from "lucide-react";
+import { ArrowUpRight, ArrowUp, Calendar } from "lucide-react";
 import { ShimmerButton } from "@/components/ui/shimmer-button";
 import { BlurFade } from "@/components/ui/blur-fade";
 
 export function Footer() {
-  const [copiedEmail, setCopiedEmail] = useState(false);
   const [showBackToTop, setShowBackToTop] = useState(false);
 
   useEffect(() => {
@@ -17,12 +16,6 @@ export function Footer() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const handleCopyEmail = () => {
-    navigator.clipboard.writeText("ashishjangde54@gmail.com");
-    setCopiedEmail(true);
-    setTimeout(() => setCopiedEmail(false), 2500);
-  };
 
   const handleOpenCalendly = () => {
     window.open("https://calendly.com/ashishjangde54/new-meeting", "_blank", "noopener,noreferrer");
@@ -58,21 +51,6 @@ export function Footer() {
           </motion.button>
         </div>
 
-        <div className="flex flex-wrap items-center justify-center gap-3 pt-1">
-          <button
-            onClick={handleCopyEmail}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-card/60 hover:bg-accent text-xs font-mono text-muted-foreground transition-all cursor-pointer max-w-full truncate"
-          >
-            <Mail className="size-3.5 text-primary shrink-0" />
-            <span className="truncate">ashishjangde54@gmail.com</span>
-            {copiedEmail ? (
-              <Check className="size-3.5 text-emerald-400 shrink-0" />
-            ) : (
-              <Copy className="size-3.5 text-muted-foreground shrink-0" />
-            )}
-          </button>
-        </div>
-
         <div className="pt-6 sm:pt-8 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-3 text-xs font-mono text-muted-foreground">
           <p>© {new Date().getFullYear()} Ashish Jangde. All rights reserved.</p>
           <p>Built with Next.js, FastAPI & Tailwind CSS.</p>
@@ -97,3 +75,4 @@ export function Footer() {
     </footer>
   );
 }
+
