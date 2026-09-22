@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import dynamic from "next/dynamic";
 import { Navbar } from "./navbar";
 import { HeroSection } from "./hero-section";
 import { ServicesSection } from "./services-section";
@@ -13,10 +14,14 @@ import { FAQSection } from "./faq-section";
 import { EducationSection } from "./education-section";
 import { ContactForm } from "./contact-form";
 import { Footer } from "./footer";
-import Velaris from "@/components/ui/velaris";
 import { BlurFade } from "@/components/ui/blur-fade";
 import { Badge } from "@/components/ui/badge";
-import { InteractiveAmbientBackground } from "@/components/ui/interactive-ambient-background";
+
+const Velaris = dynamic(() => import("@/components/ui/velaris"), { ssr: false });
+const InteractiveAmbientBackground = dynamic(
+  () => import("@/components/ui/interactive-ambient-background").then((mod) => mod.InteractiveAmbientBackground),
+  { ssr: false }
+);
 
 export function PortfolioShell() {
   return (

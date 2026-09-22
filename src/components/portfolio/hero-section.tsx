@@ -133,10 +133,11 @@ export function HeroSection() {
           >
             <div className="relative aspect-[4/5] overflow-hidden rounded-[1.75rem] bg-muted shadow-xl transition-shadow duration-500 group-hover:shadow-2xl">
               <Image
-                src="/assets/ashish-jangde.png"
+                src="/assets/ashish-jangde.webp"
                 alt="Ashish Jangde - Full-Stack Engineer"
                 fill
                 priority
+                quality={85}
                 className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.02]"
                 sizes="(max-width: 768px) 100vw, 40vw"
               />
