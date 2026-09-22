@@ -41,7 +41,7 @@ export function ServicesSection() {
                     <CardTitle className="text-lg sm:text-xl font-bold text-foreground group-hover:text-primary transition-colors">
                       {service.title}
                     </CardTitle>
-                    <CardDescription className="text-[11px] sm:text-xs font-mono text-primary font-medium mt-1">
+                    <CardDescription className="text-[11px] sm:text-xs font-mono text-primary/80 mt-1">
                       {service.subtitle}
                     </CardDescription>
                   </div>

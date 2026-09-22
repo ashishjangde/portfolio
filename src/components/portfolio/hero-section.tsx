@@ -31,24 +31,38 @@ export function HeroSection() {
           transition={reduceMotion ? undefined : { duration: 8, repeat: Infinity, ease: "easeInOut" }}
         />
         <div className="flex flex-col gap-6 text-left lg:col-span-7">
-          <div className="inline-flex w-fit items-center gap-2 rounded-full border border-primary/25 bg-primary/10 px-3.5 py-1.5 font-mono text-xs font-semibold text-primary">
-            <span
-              aria-hidden="true"
-              className="size-1.5 rounded-full bg-primary"
-            />
-            Full-Stack Engineer · Next.js · Python · FastAPI
-          </div>
+          <BlurFade delay={0.08}>
+            <div className="inline-flex w-fit items-center gap-2 rounded-full border border-primary/25 bg-primary/10 px-3.5 py-1.5 font-mono text-xs font-semibold text-primary">
+              <motion.span
+                aria-hidden="true"
+                className="size-1.5 rounded-full bg-primary"
+                animate={reduceMotion ? undefined : { opacity: [0.45, 1, 0.45], scale: [0.9, 1.15, 0.9] }}
+                transition={reduceMotion ? undefined : { duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
+              />
+              Full-Stack Engineer · Next.js · Python · FastAPI
+            </div>
+          </BlurFade>
 
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-foreground leading-[1.15] sm:leading-[1.1]">
-            I build the product your idea needs{" "}
-            <AnimatedGradientText>
-              from first API to final handover.
-            </AnimatedGradientText>
-          </h1>
+          <BlurFade delay={0.15}>
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-foreground leading-[1.15] sm:leading-[1.1]">
+              <motion.span
+                initial={reduceMotion ? false : { opacity: 0, x: -14 }}
+                animate={reduceMotion ? undefined : { opacity: 1, x: 0 }}
+                transition={reduceMotion ? undefined : { duration: 0.65, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+              >
+                I build the product your idea needs
+              </motion.span>{" "}
+              <AnimatedGradientText colorFrom="var(--primary)" colorTo="var(--foreground)" speed={1.2}>
+                from first API to final handover.
+              </AnimatedGradientText>
+            </h1>
+          </BlurFade>
 
-          <p className="text-sm sm:text-lg text-muted-foreground max-w-2xl leading-relaxed">
-            Full-stack engineering for founders and teams who need thoughtful product work across Python, FastAPI, Node.js, Next.js, and the systems around them.
-          </p>
+          <BlurFade delay={0.2}>
+            <p className="text-sm sm:text-lg text-muted-foreground max-w-2xl leading-relaxed">
+              Full-stack engineering for founders and teams who need thoughtful product work across Python, FastAPI, Node.js, Next.js, and the systems around them.
+            </p>
+          </BlurFade>
 
           <BlurFade delay={0.25}>
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 pt-2">
@@ -153,9 +167,9 @@ export function HeroSection() {
                 <p className="mb-1 font-mono text-xs font-semibold text-primary">
                   Production Engineering Credibility
                 </p>
-                <h2 className="text-base font-bold text-foreground sm:text-lg">
+                <h3 className="text-base font-bold text-foreground sm:text-lg">
                   Kalpi.ai — Backed by Rainmatter by Zerodha
-                </h2>
+                </h3>
                 <p className="mt-1 max-w-xl text-xs leading-relaxed text-muted-foreground">
                   Engineered portfolio analytics microservices, ClickHouse time-series querying, broker WebSocket sync, and automated order-execution workflows.
                 </p>
